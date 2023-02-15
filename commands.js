@@ -133,3 +133,25 @@
 /*
     db.bounties.updateMany({}, {$set: {captured: true}})
 */
+
+// BONUS
+//Queries
+// 1. Find all Scavengers who joined the team after December 31, 2011
+/*
+    db.scavengers.find({joined: {$gte: ISODate("2011-12-31")}})
+*/
+
+// 2. Find all Scavengers who helped catch Thanoceros.
+/*
+    db.scavengers.find({"captured.name": {$eq: "Thanoceros"}})
+*/
+
+// 3. Find all Scavengers who helped catch an animal bounty with a reward greater than $11000.
+/*
+    db.scavengers.find({"captured.name": {$eq: "Thanoceros"}})
+*/
+
+// 4. Find all Scavengers that don't have a weapon.
+/*
+    db.scavengers.find({weapon: {$eq: null}})
+*/
